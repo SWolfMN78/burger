@@ -21,8 +21,7 @@ var orm = {
                 cb(result);
             });
     },
-    //insertOne() = insert into burgers (what )
-    //INSERT INTO burgers (burger_name, devored) VALUES ('juicy lucy', false);
+    //INSERT INTO burgers (burger_name, devoured) VALUES ('juicy lucy', false);
     insertOne: function(table, colm, value, final) {
         var queryString = "INSERT INTO " + table;
 

@@ -23,3 +23,23 @@ router.post("/api/burgers", function(req, result) {
         result.json({ id: result.insertId })
     });
 });
+
+//put the information up on the site
+router.put("/api/burgers/:id", function(req, res) {
+    var condition = "id = " + req.params.id;
+
+    console.log("condition", condition);
+
+    burgersMod.update({
+        devoured: req.body.devoured
+    }, condition, function(result) {
+        if (result.changedRows == 0) {
+            //If no rows are changed then ID = 0, throw 404
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
+});
+
+//may need to delete at a later date - Save for later.
