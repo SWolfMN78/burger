@@ -3,8 +3,29 @@
 <h2>Here is your burger, go ahead...eat it!</h2>
 
 <ul>
-    {{#each }}
-    <!-- create a JS file for the logic -->
-    {{}}
+    {{#each jsBurgers}}
+        {{#unless devoured}}
+            {{> jsBurgers/burger-block devoured=true}}
+        {{/unless}}
     {{/each}}
 </ul>
+
+<h2>Burgers that have been eaten</h2>
+
+<ul>
+    {{#each jsBurgers}}
+        {{#if devoured}}
+            {{>jsBurgers/burger-block devoured=false}}
+        {{/if}}
+    {{/each}}
+</ul>
+
+<h2>Make a buger!</h2>
+<form class="create-form">
+    <div class="form-group">
+        <label for="ca">Burger Info:</label>
+        <input type="text" id="ca" name="name" value="0">
+    </div>
+
+    <button type="submit">Add Da'Burger!</button>
+</form>
