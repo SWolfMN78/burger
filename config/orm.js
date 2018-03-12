@@ -55,19 +55,6 @@ var orm = {
             cb(result) //run back the results in the call back.
         });
     },
-    // //delete query for mysql
-    // delete: function(table, condition, cb) {
-    //     var queryString = "DELETE FROM " + table;
-    //     queryString += " WHERE ";
-    //     queryString += condition;
-
-    //     connection.query(queryString, function(error, result) {
-    //         if (error) { throw error; }
-
-    //         cb(result);
-    //     });
-    // }
 };
 
-// updateOne()
 module.exports = orm;

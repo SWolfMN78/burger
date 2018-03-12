@@ -1,5 +1,5 @@
 var express = require("express");
-var burgersMod = require("../config/burgers.js");
+var burgersMod = require("../models/burgers.js");
 var router = express.Router();
 
 //set the router information - first the base localhost page on load ie /
@@ -13,7 +13,7 @@ router.get("/", function(req, result) {
     });
 });
 
-//post the information to the website for use.
+//post the information for creating a new burger
 router.post("/api/burgers", function(req, result) {
     burgersMod.insertOne([
         "name", "devoured"
@@ -24,6 +24,7 @@ router.post("/api/burgers", function(req, result) {
     });
 });
 
+//post information for devouring a burger
 //put the information up on the site
 router.put("/api/burgers/:id", function(req, res) {
     var condition = "id = " + req.params.id;
@@ -41,5 +42,3 @@ router.put("/api/burgers/:id", function(req, res) {
         }
     });
 });
-
-//may need to delete at a later date - Save for later.
