@@ -1,5 +1,5 @@
 var express = require("express");
-var burgersMod = require("../models/burgers.js");
+var burgersMod = require("../models/burger.js");
 var router = express.Router();
 
 //set the router information - first the base localhost page on load ie /
